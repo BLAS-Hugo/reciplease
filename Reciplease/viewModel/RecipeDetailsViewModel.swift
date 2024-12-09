@@ -14,8 +14,8 @@ class RecipeDetailsViewModel {
         self.dataProvider = dataProvider
     }
 
-     func addRecipeToFavorites(recipe: Recipe) {
-         dataProvider.addRecipeToFavorites(recipe: recipe)
+     func addRecipeToFavorites(recipe: Recipe) throws {
+         try dataProvider.addRecipeToFavorites(recipe: recipe)
      }
     
 

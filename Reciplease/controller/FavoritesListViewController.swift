@@ -21,6 +21,7 @@ class FavoritesListViewController: UIViewController {
                 UINib(nibName: "RecipeCell", bundle: nil),
                 forCellReuseIdentifier: FavoritesListViewController.cellIdentifier)
             tableView.dataSource = self
+            tableView.delegate = self
         }
     }
     override func viewDidLoad() {
@@ -38,6 +39,23 @@ class FavoritesListViewController: UIViewController {
         favorites = viewModel.getRecipesInFavorite()
         print(favorites)
         tableView.reloadData()
+    }
+
+    func openDetailsPage(recipe: RecipeCoreData) {
+        let viewController = UIStoryboard.main.instantiateViewController(
+            identifier: String(describing: RecipeDetailsViewController.self)
+        ) { creator in
+            let viewController = RecipeDetailsViewController(
+                coder: creator, recipe: Recipe.fromCoreData(recipe: recipe))
+            return viewController
+        }
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
+extension FavoritesListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        openDetailsPage(recipe: favorites[indexPath.row])
     }
 }
 

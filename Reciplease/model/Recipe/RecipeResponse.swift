@@ -61,12 +61,15 @@ struct Recipe: Decodable {
     static func fromCoreData(recipe: RecipeCoreData) -> Recipe {
         let string = String(format:"%d", recipe.cookingTime)
         let totalTime = Int(string)
+        let ingredients = (recipe.ingredients ?? []).map { food in
+            Ingredient(text: food, quantity: 0, measure: nil, food: food, weight: 0, foodCategory: "", foodID: "", image: nil)
+        }
       return Recipe(
         id: recipe.id!,
         label: recipe.label ?? "",
         image: recipe.imageUrl ?? "",
         url: recipe.url ?? "",
-        ingredients: [],
+        ingredients: ingredients,
         totalTime: totalTime ?? 0
       )
     }
@@ -80,7 +83,7 @@ struct Recipe: Decodable {
         recipeCoreData.setValue(image, forKey: "imageUrl")
         recipeCoreData.setValue(totalTime, forKey: "cookingTime")
 
-        let ingredients = ingredients.map(\.self.text)
+        let ingredients = ingredients.map(\.self.food)
         recipeCoreData.setValue(ingredients, forKey: "ingredients")
 
         return recipeCoreData

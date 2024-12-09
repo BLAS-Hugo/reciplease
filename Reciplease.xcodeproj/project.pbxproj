@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A15BCAB2CDD6C7B001A43BE /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15BCAA2CDD6C7B001A43BE /* FavoritesListViewController.swift */; };
+		9A3F390A2CF526F600ED7530 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3F39092CF526F600ED7530 /* WebViewController.swift */; };
 		9A57DDF32CAF421000637763 /* StoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57DDF22CAF421000637763 /* StoryboardExtension.swift */; };
 		9A57DDF52CAF459A00637763 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57DDF42CAF459A00637763 /* UIViewControllerExtension.swift */; };
 		9A9D06932CCAA1520095F53E /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D06922CCAA1520095F53E /* RecipeDetailsViewController.swift */; };
@@ -45,6 +46,7 @@
 		8191AE8FDB6DC88EF245A586 /* Pods_Reciplease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reciplease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A15BCAA2CDD6C7B001A43BE /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
 		9A2512092CDDF338005B5BEC /* RecipleaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A3F39092CF526F600ED7530 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		9A57DDF22CAF421000637763 /* StoryboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardExtension.swift; sourceTree = "<group>"; };
 		9A57DDF42CAF459A00637763 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		9A9D06922CCAA1520095F53E /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 		9AE717CE2C9CBC9F003CAE67 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				9A3F39092CF526F600ED7530 /* WebViewController.swift */,
 				9AE717CF2C9CBD0D003CAE67 /* IngredientListViewController.swift */,
 				9AA8E30C2CA60D2800B02AB4 /* RecipeListViewController.swift */,
 				9A57DDF42CAF459A00637763 /* UIViewControllerExtension.swift */,
@@ -366,6 +369,7 @@
 				9ABF872C2CE6A05D0097AC32 /* RecipeDataProviding.swift in Sources */,
 				9ABF872A2CE6A0420097AC32 /* RecipeDataProvider.swift in Sources */,
 				9A57DDF32CAF421000637763 /* StoryboardExtension.swift in Sources */,
+				9A3F390A2CF526F600ED7530 /* WebViewController.swift in Sources */,
 				9A9D06932CCAA1520095F53E /* RecipeDetailsViewController.swift in Sources */,
 				9AA8E30D2CA60D2800B02AB4 /* RecipeListViewController.swift in Sources */,
 				9AE96DE22C938B0700AA91E7 /* CoreDataStack.swift in Sources */,

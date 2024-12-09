@@ -51,7 +51,7 @@ class RecipeDetailsViewController: UIViewController {
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
         if isLiked {
             favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            viewModel.addRecipeToFavorites(recipe: recipe)
+            try? viewModel.addRecipeToFavorites(recipe: recipe)
         } else {
             favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
             viewModel.removeRecipeFromFavorites(recipe: recipe)

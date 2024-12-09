@@ -58,7 +58,6 @@ class RecipeCell: UITableViewCell {
 
         if let image = recipe.imageUrl {
             recipeImage.load(url: URL(string: image)!)
-
         }
     }
 }

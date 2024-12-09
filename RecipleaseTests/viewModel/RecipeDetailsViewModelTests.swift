@@ -9,53 +9,108 @@ import XCTest
 @testable import Reciplease
 
 final class RecipeDetailsViewModelTests: XCTestCase {
-    func testAddRecipeToFavorites() {
-        let viewModel = RecipeDetailsViewModel(dataProvider: RecipeDataProviderMock())
-
-        let recipe = Recipe(
-            uri: "recipe.com",
-            label: "Pasta bolognese",
-            image: "image.png",
-            source: "google",
-            url: "google.com",
-            ingredients: [],
-            totalTime: 60,
-            tags: ["pasta", "tomato", "meat"],
-            instructions: ["Cook pasta", "Cook sauce", "Mix pasta and sauce"]
-        )
-
-        viewModel.addRecipeToFavorites(recipe: recipe)
-
-        let recipeIsContained = viewModel.dataProvider.isRecipeInFavorites(recipe: recipe)
-
-        XCTAssertTrue(recipeIsContained)
+    var viewModel: RecipeDetailsViewModel!
+    var mockDataProvider: RecipeDataProviderMock!
+    
+    override func setUp() {
+        super.setUp()
+        mockDataProvider = RecipeDataProviderMock()
+        viewModel = RecipeDetailsViewModel(dataProvider: mockDataProvider)
     }
-
-    func testRemoveRecipeFromFavorites() {
-        let viewModel = RecipeDetailsViewModel(dataProvider: RecipeDataProviderMock())
-
+    
+    override func tearDown() {
+        mockDataProvider.reset()
+        mockDataProvider = nil
+        viewModel = nil
+        super.tearDown()
+    }
+    
+    func testAddRecipeToFavorites() {
+        // Given
         let recipe = Recipe(
-            uri: "recipe.com",
+            id: UUID().uuidString,
             label: "Pasta bolognese",
             image: "image.png",
-            source: "google",
-            url: "google.com",
+            url: "recipe.com",
             ingredients: [],
-            totalTime: 60,
-            tags: ["pasta", "tomato", "meat"],
-            instructions: ["Cook pasta", "Cook sauce", "Mix pasta and sauce"]
+            totalTime: 60
         )
-
-        viewModel.addRecipeToFavorites(recipe: recipe)
-
-        let recipeIsContained = viewModel.dataProvider.isRecipeInFavorites(recipe: recipe)
-
-        XCTAssertTrue(recipeIsContained)
-
+        
+        // When
+        XCTAssertNoThrow(try viewModel.addRecipeToFavorites(recipe: recipe))
+        
+        // Then
+        XCTAssertEqual(mockDataProvider.addToFavoritesCallCount, 1)
+        XCTAssertTrue(mockDataProvider.isRecipeInFavorites(recipe: recipe))
+    }
+    
+    func testAddRecipeToFavoritesWithError() {
+        // Given
+        let recipe = Recipe(
+            id: UUID().uuidString,
+            label: "Pasta bolognese",
+            image: "image.png",
+            url: "recipe.com",
+            ingredients: [],
+            totalTime: 60
+        )
+        mockDataProvider.shouldThrowError = true
+        
+        // When/Then
+        XCTAssertThrowsError(try viewModel.addRecipeToFavorites(recipe: recipe)) { error in
+            XCTAssertEqual(error as? RecipeDataProviderMock.MockError, .simulatedError)
+        }
+        XCTAssertEqual(mockDataProvider.addToFavoritesCallCount, 1)
+        XCTAssertFalse(mockDataProvider.isRecipeInFavorites(recipe: recipe))
+    }
+    
+    func testRemoveRecipeFromFavorites() {
+        // Given
+        let recipe = Recipe(
+            id: UUID().uuidString,
+            label: "Pasta bolognese",
+            image: "image.png",
+            url: "recipe.com",
+            ingredients: [],
+            totalTime: 60
+        )
+        try? mockDataProvider.addRecipeToFavorites(recipe: recipe)
+        
+        // When
         viewModel.removeRecipeFromFavorites(recipe: recipe)
-
-        let recipeNotContained = !viewModel.dataProvider.isRecipeInFavorites(recipe: recipe)
-
-        XCTAssertTrue(recipeNotContained)
+        
+        // Then
+        XCTAssertEqual(mockDataProvider.removeFromFavoritesCallCount, 1)
+        XCTAssertFalse(mockDataProvider.isRecipeInFavorites(recipe: recipe))
+    }
+    
+    func testGetRecipesInFavorite() {
+        // Given
+        let recipe = Recipe(
+            id: UUID().uuidString,
+            label: "Pasta bolognese",
+            image: "image.png",
+            url: "recipe.com",
+            ingredients: [],
+            totalTime: 60
+        )
+        try? mockDataProvider.addRecipeToFavorites(recipe: recipe)
+        
+        // When
+        let favorites = viewModel.getRecipesInFavorite()
+        
+        // Then
+        XCTAssertEqual(mockDataProvider.getRecipesInFavoriteCallCount, 1)
+        XCTAssertFalse(favorites.isEmpty)
+        XCTAssertEqual(favorites.count, 1)
+    }
+    
+    func testGetRecipesInFavoriteWhenEmpty() {
+        // When
+        let favorites = viewModel.getRecipesInFavorite()
+        
+        // Then
+        XCTAssertEqual(mockDataProvider.getRecipesInFavoriteCallCount, 1)
+        XCTAssertTrue(favorites.isEmpty)
     }
 }

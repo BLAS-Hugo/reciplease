@@ -7,8 +7,8 @@
 
 import Foundation
 protocol RecipeDataProviding {
-    func addRecipeToFavorites(recipe: Recipe)
-    func addRecipeToFavorites(recipe: RecipeCoreData)
+    func addRecipeToFavorites(recipe: Recipe) throws
+    func addRecipeToFavorites(recipe: RecipeCoreData) throws
     func removeRecipeFromFavorites(recipe: Recipe)
     func removeRecipeFromFavorites(recipe: RecipeCoreData)
     func isRecipeInFavorites(recipe: RecipeCoreData) -> Bool

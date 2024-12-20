@@ -33,14 +33,4 @@ class NetworkSession {
             throw NetworkError.invalidResponse
         }
     }
-
-    func getDirections(for recipe: Recipe) async throws -> String {
-        do {
-            let response = try await AF.request(recipe.url, method: .get).serializingData().value
-            print(response)
-            return ""
-        } catch {
-            throw NetworkError.invalidResponse
-        }
-    }
 }

@@ -22,8 +22,4 @@ class MockNetworkSession: NetworkSession {
         let recipes = try jsonDecoder.decode(RecipeResponse.self, from: data)
         return recipes
     }
-
-    override func getDirections(for recipe: Recipe) async throws -> String {
-        return "Mock directions for \(recipe.label)"
-    }
 }

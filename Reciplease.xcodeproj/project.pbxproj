@@ -159,8 +159,6 @@
 				9ABF872E2CE731F80097AC32 /* Recipe */,
 				9AE96DE02C938AEA00AA91E7 /* CoreData */,
 				9A57DDF22CAF421000637763 /* StoryboardExtension.swift */,
-				9ABF87292CE6A0420097AC32 /* RecipeDataProvider.swift */,
-				9ABF872B2CE6A05D0097AC32 /* RecipeDataProviding.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -189,6 +187,8 @@
 		9AE96DE02C938AEA00AA91E7 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				9ABF87292CE6A0420097AC32 /* RecipeDataProvider.swift */,
+				9ABF872B2CE6A05D0097AC32 /* RecipeDataProviding.swift */,
 				9AB3E8FF2C8A61E8006A0D74 /* Reciplease.xcdatamodeld */,
 				9AE96DE12C938B0700AA91E7 /* CoreDataStack.swift */,
 			);

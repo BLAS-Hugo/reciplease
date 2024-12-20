@@ -36,7 +36,7 @@ class IngredientListViewController: UIViewController {
         if !textField.hasText {
             return
         }
-        if IngredientList.shared.ingredients.contains(textField.text ?? "") {
+        if IngredientList.shared.contains(ingredient: textField.text ?? "") {
             showAlreadyPresentAlert()
         }
         IngredientList.shared.add(ingredient: textField.text ?? "")
@@ -50,7 +50,7 @@ class IngredientListViewController: UIViewController {
                 activityIndicator.startAnimating()
                 activityIndicator.isHidden = false
                 searchButton.isHidden = true
-                let recipeList = try await recipeRepository.getRecipeWithKeywords(IngredientList.shared.ingredients)
+                let recipeList = try await recipeRepository.getRecipeWithKeywords(IngredientList.shared.getAllIngredients())
                 let viewController = UIStoryboard.main.instantiateViewController(identifier: String(describing: RecipeListViewController.self)) { creator in
                     let viewController = RecipeListViewController(coder: creator, recipeList: recipeList)
                     return viewController
@@ -80,13 +80,13 @@ extension IngredientListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return IngredientList.shared.ingredients.count
+        return IngredientList.shared.getAllIngredients().count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: IngredientListViewController.cellIdentifier, for: indexPath)
 
-        let ingredient = IngredientList.shared.ingredients[indexPath.row]
+        let ingredient = IngredientList.shared.getAllIngredients()[indexPath.row]
         cell.textLabel?.text = ingredient
 
         return cell

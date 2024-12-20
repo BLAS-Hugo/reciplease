@@ -10,13 +10,13 @@ import CoreData
 
 class TestCoreDataStack: NSObject {
     lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "Reciplease")
         let description = NSPersistentStoreDescription()
-        description.url = URL(fileURLWithPath: "/dev/null")
-        let container = NSPersistentContainer(name: "TestCoreDataStack")
+        description.type = NSInMemoryStoreType
         container.persistentStoreDescriptions = [description]
         container.loadPersistentStores { _, error in
-            if let error {
-                fatalError("Failed to load persistent stores: \(error)")
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         }
         return container

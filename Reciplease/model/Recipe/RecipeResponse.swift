@@ -29,6 +29,7 @@ struct Recipe: Decodable {
     let url: String
     let ingredients: [Ingredient]
     let totalTime: Int
+    let isFavorite: Bool
 
     enum CodingKeys: CodingKey {
         case id
@@ -47,22 +48,41 @@ struct Recipe: Decodable {
         self.url = try container.decode(String.self, forKey: .url)
         self.ingredients = try container.decode([Ingredient].self, forKey: .ingredients)
         self.totalTime = try container.decode(Int.self, forKey: .totalTime)
+        self.isFavorite = false
     }
 
-    init(id: String, label: String, image: String, url: String, ingredients: [Ingredient], totalTime: Int) {
+    init(
+        id: String,
+        label: String,
+        image: String,
+        url: String,
+        ingredients: [Ingredient],
+        totalTime: Int,
+        isFavorite: Bool
+    ) {
         self.id = id
         self.label = label
         self.image = image
         self.url = url
         self.ingredients = ingredients
         self.totalTime = totalTime
+        self.isFavorite = isFavorite
     }
 
     static func fromCoreData(recipe: RecipeCoreData) -> Recipe {
-        let string = String(format:"%d", recipe.cookingTime)
+        let string = String(format: "%d", recipe.cookingTime)
         let totalTime = Int(string)
         let ingredients = (recipe.ingredients ?? []).map { food in
-            Ingredient(text: food, quantity: 0, measure: nil, food: food, weight: 0, foodCategory: "", foodID: "", image: nil)
+            Ingredient(
+                text: food,
+                quantity: 0,
+                measure: nil,
+                food: food,
+                weight: 0,
+                foodCategory: "",
+                foodID: "",
+                image: nil
+            )
         }
       return Recipe(
         id: recipe.id!,
@@ -70,7 +90,8 @@ struct Recipe: Decodable {
         image: recipe.imageUrl ?? "",
         url: recipe.url ?? "",
         ingredients: ingredients,
-        totalTime: totalTime ?? 0
+        totalTime: totalTime ?? 0,
+        isFavorite: true
       )
     }
 

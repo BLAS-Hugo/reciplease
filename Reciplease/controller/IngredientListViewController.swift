@@ -21,7 +21,7 @@ class IngredientListViewController: UIViewController {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var searchButton: UIButton!
-    private let recipeRepository = RecipeRepository()
+    private let recipeRepository = RecipeRepository(session: NetworkSession())
 
     override func viewDidLoad() {
         super.viewDidLoad()

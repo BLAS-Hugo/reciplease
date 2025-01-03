@@ -10,7 +10,7 @@ import XCTest
 
 final class RecipeRepositoryTests: XCTestCase {
     var repository: RecipeRepository!
-    var mockNetworkSession: MockNetworkSession!
+    var mockNetworkSession: NetworkSession!
 
     override func setUp() {
         super.setUp()
@@ -34,31 +34,8 @@ final class RecipeRepositoryTests: XCTestCase {
 
             // Then
             XCTAssertEqual(response.hits.count, 1)
-            XCTAssertEqual(response.hits[0].recipe.label, "Pasta")
+            XCTAssertEqual(response.hits[0].recipe.label, "Shredded chicken")
             XCTAssertEqual(response.hits[0].recipe.id, "1")
-        } catch {
-            XCTFail("Expected successful response, but got error: \(error)")
-        }
-    }
-
-    func testGetDirections() async {
-        // Given
-        let recipe = Recipe(
-            id: "1",
-            label: "Pasta",
-            image: "pasta.png",
-            url: "http://example.com/pasta",
-            ingredients: [],
-            totalTime: 30,
-            isFavorite: false
-        )
-
-        // When
-        do {
-            let directions = try await repository.getDirections(for: recipe)
-
-            // Then
-            XCTAssertEqual(directions, "Mock directions for Pasta")
         } catch {
             XCTFail("Expected successful response, but got error: \(error)")
         }

@@ -17,6 +17,8 @@ class NetworkSession {
         case invalidResponse
     }
 
+    var shouldThrowError = false
+
     func getRecipeWithKeyword(queries: [String]) async throws -> RecipeResponse {
         do {
             let parameters = [

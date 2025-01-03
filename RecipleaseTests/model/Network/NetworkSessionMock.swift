@@ -6,13 +6,16 @@
 //
 
 import Foundation
-import Alamofire
+@testable import Reciplease
 
 class MockNetworkSession: NetworkSession {
-
     private let mockResponseFileName = "MockRecipeResponse.json"
 
     override func getRecipeWithKeyword(queries: [String]) async throws -> RecipeResponse {
+        if shouldThrowError {
+            throw NetworkError.invalidResponse
+        }
+
         guard let url = Bundle.main.url(forResource: mockResponseFileName, withExtension: nil) else {
             throw NetworkError.invalidURL
         }

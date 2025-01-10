@@ -71,7 +71,7 @@ struct Recipe: Decodable {
 
     static func fromCoreData(recipe: RecipeCoreData) -> Recipe {
         let string = String(format: "%d", recipe.cookingTime)
-        let totalTime = Int(string)
+        let totalTime = Int(string) ?? 0
         let ingredients = (recipe.ingredients ?? []).map { food in
             Ingredient(
                 text: food,
@@ -90,7 +90,7 @@ struct Recipe: Decodable {
         image: recipe.imageUrl ?? "",
         url: recipe.url ?? "",
         ingredients: ingredients,
-        totalTime: totalTime ?? 0,
+        totalTime: totalTime,
         isFavorite: true
       )
     }

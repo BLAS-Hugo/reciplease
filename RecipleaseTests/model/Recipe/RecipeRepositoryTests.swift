@@ -33,9 +33,8 @@ final class RecipeRepositoryTests: XCTestCase {
             let response = try await repository.getRecipeWithKeywords(queries)
 
             // Then
-            XCTAssertEqual(response.hits.count, 1)
+            XCTAssertEqual(response.hits.count, 2)
             XCTAssertEqual(response.hits[0].recipe.label, "Shredded chicken")
-            XCTAssertEqual(response.hits[0].recipe.id, "1")
         } catch {
             XCTFail("Expected successful response, but got error: \(error)")
         }

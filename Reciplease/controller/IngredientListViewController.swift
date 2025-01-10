@@ -38,6 +38,7 @@ class IngredientListViewController: UIViewController {
         }
         if IngredientList.shared.contains(ingredient: textField.text ?? "") {
             showAlreadyPresentAlert()
+            return
         }
         IngredientList.shared.add(ingredient: textField.text ?? "")
         tableView.reloadData()
@@ -50,20 +51,18 @@ class IngredientListViewController: UIViewController {
                 activityIndicator.startAnimating()
                 activityIndicator.isHidden = false
                 searchButton.isHidden = true
-                let recipeList = try await recipeRepository.getRecipeWithKeywords(IngredientList.shared.getAllIngredients())
-                let viewController = UIStoryboard.main.instantiateViewController(identifier: String(describing: RecipeListViewController.self)) { creator in
+                let recipeList = try await recipeRepository.getRecipeWithKeywords(
+                    IngredientList.shared.getAllIngredients())
+                let viewController = UIStoryboard.main.instantiateViewController(
+                    identifier: String(describing: RecipeListViewController.self)) { creator in
                     let viewController = RecipeListViewController(coder: creator, recipeList: recipeList)
                     return viewController
                 }
                 navigationController?.pushViewController(viewController, animated: true)
-                activityIndicator.stopAnimating()
-                activityIndicator.isHidden = true
-                searchButton.isHidden = false
+                stopAnimation()
             } catch {
                 showErrorAlert()
-                activityIndicator.stopAnimating()
-                activityIndicator.isHidden = true
-                searchButton.isHidden = false
+                stopAnimation()
             }
         }
     }
@@ -71,6 +70,12 @@ class IngredientListViewController: UIViewController {
     @IBAction func onClearButtonTapped() {
         IngredientList.shared.clear()
         tableView.reloadData()
+    }
+
+    private func stopAnimation() {
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+        searchButton.isHidden = false
     }
 }
 

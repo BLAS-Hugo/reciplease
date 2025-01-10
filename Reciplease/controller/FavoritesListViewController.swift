@@ -36,9 +36,12 @@ class FavoritesListViewController: UIViewController {
     }
 
     func getFavoritesRecipeList() {
-        favorites = viewModel.getRecipesInFavorite()
+        let favoriteList = viewModel.getRecipesInFavorite()
         print(favorites)
-        tableView.reloadData()
+        if let list = favoriteList {
+            favorites = list
+            tableView.reloadData()
+        }
     }
 
     func openDetailsPage(recipe: RecipeCoreData) {

@@ -37,6 +37,10 @@ class RecipeDetailsViewController: UIViewController {
     }
 
     func setupView() {
+        if viewModel.dataProvider.isRecipeInFavorites(recipe: recipe) {
+            isLiked = true
+            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }
         titleLabel.text = recipe.label
         titleLabel.numberOfLines = 2
         imageView.load(url: URL(string: recipe.image)!)

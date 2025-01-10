@@ -23,7 +23,7 @@ class RecipeDetailsViewModel {
         dataProvider.removeRecipeFromFavorites(recipe: recipe)
     }
 
-    func getRecipesInFavorite() -> [RecipeCoreData] {
-        return dataProvider.getRecipesInFavorite() ?? []
+    func getRecipesInFavorite() -> [RecipeCoreData]? {
+        return dataProvider.getRecipesInFavorite()
     }
 }

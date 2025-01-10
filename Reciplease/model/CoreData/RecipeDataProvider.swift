@@ -40,10 +40,10 @@ class RecipeDataProvider: RecipeDataProviding {
     }
 
     func removeRecipeFromFavorites(recipe: RecipeCoreData) {
+        guard isRecipeInFavorites(recipe: recipe) else { return }
         let instance = CoreDataStack.sharedInstance
-        if isRecipeInFavorites(recipe: recipe) {
-            instance.viewContext.delete(recipe)
-        }
+
+        instance.viewContext.delete(recipe)
     }
 
     func removeRecipeFromFavorites(recipe: Recipe) {
@@ -54,9 +54,9 @@ class RecipeDataProvider: RecipeDataProviding {
         recipeCoreData.setValue(recipe.label, forKey: "label")
         recipeCoreData.setValue(recipe.url, forKey: "url")
 
-        if isRecipeInFavorites(recipe: recipeCoreData) {
-            instance.viewContext.delete(recipeCoreData)
-        }
+        guard isRecipeInFavorites(recipe: recipe) else { return }
+
+        instance.viewContext.delete(recipeCoreData)
     }
 
     func getRecipesInFavorite() -> [RecipeCoreData]? {

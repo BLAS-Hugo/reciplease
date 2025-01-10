@@ -104,9 +104,13 @@ final class RecipeDetailsViewModelTests: XCTestCase {
         let favorites = viewModel.getRecipesInFavorite()
 
         // Then
-        XCTAssertEqual(mockDataProvider.getRecipesInFavoriteCallCount, 1)
-        XCTAssertFalse(favorites.isEmpty)
-        XCTAssertEqual(favorites.count, 1)
+        if let favorites {
+            XCTAssertEqual(mockDataProvider.getRecipesInFavoriteCallCount, 1)
+            XCTAssertFalse(favorites.isEmpty)
+            XCTAssertEqual(favorites.count, 1)
+                           } else {
+                XCTFail("Favorites should not be nil")
+            }
     }
 
     func testGetRecipesInFavoriteWhenEmpty() {
@@ -114,7 +118,11 @@ final class RecipeDetailsViewModelTests: XCTestCase {
         let favorites = viewModel.getRecipesInFavorite()
 
         // Then
-        XCTAssertEqual(mockDataProvider.getRecipesInFavoriteCallCount, 1)
-        XCTAssertTrue(favorites.isEmpty)
+        if let favorites {
+            XCTAssertEqual(mockDataProvider.getRecipesInFavoriteCallCount, 1)
+            XCTAssertTrue(favorites.isEmpty)
+        } else {
+            XCTFail("Favorites should not be nil")
+        }
     }
 }

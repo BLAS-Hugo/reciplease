@@ -49,6 +49,7 @@ struct Recipe: Decodable {
         self.ingredients = try container.decode([Ingredient].self, forKey: .ingredients)
         self.totalTime = try container.decode(Int.self, forKey: .totalTime)
         self.isFavorite = false
+        print(self.label)
     }
 
     init(

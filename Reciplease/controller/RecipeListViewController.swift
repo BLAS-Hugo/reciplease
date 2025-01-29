@@ -46,6 +46,7 @@ class RecipeListViewController: UIViewController {
         ) { creator in
             let viewController = RecipeDetailsViewController(
     coder: creator, recipe: recipe)
+            print(recipe.label)
             return viewController
         }
         navigationController?.pushViewController(viewController, animated: true)

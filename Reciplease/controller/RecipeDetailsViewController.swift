@@ -17,9 +17,9 @@ class RecipeDetailsViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var favoriteButton: UIButton!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var cookingTimeLabel: UILabel!
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ingredientsView: UITextView!
 
     init?(coder: NSCoder, recipe: Recipe) {
@@ -41,13 +41,15 @@ class RecipeDetailsViewController: UIViewController {
             isLiked = true
             favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }
-        titleLabel.text = recipe.label
+        titleLabel.text? = recipe.label
         titleLabel.numberOfLines = 2
         imageView.load(url: URL(string: recipe.image)!)
         cookingTimeLabel.text = String(recipe.totalTime / 60) + "h"
         for ingredient in recipe.ingredients {
             ingredientsView.text += "\n- \(ingredient.text)"
         }
+        ingredientsView.adjustsFontForContentSizeCategory = true
+        ingredientsView.font = UIFont.preferredFont(forTextStyle: .body)
     }
 
     @IBAction func onFavoriteButtonPressed() {

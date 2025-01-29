@@ -30,6 +30,7 @@ class IngredientListViewController: UIViewController {
         textField.clearsOnBeginEditing = true
         activityIndicator.isHidden = true
         searchButton.isHidden = false
+        textField.accessibilityLabel = "Ingredient text field"
     }
 
     @IBAction func onAddButtonTapped() {
@@ -93,6 +94,8 @@ extension IngredientListViewController: UITableViewDataSource {
 
         let ingredient = IngredientList.shared.getAllIngredients()[indexPath.row]
         cell.textLabel?.text = ingredient
+        cell.textLabel?.font = .preferredFont(forTextStyle: .body)
+        cell.textLabel?.adjustsFontForContentSizeCategory = true
 
         return cell
     }

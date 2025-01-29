@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9QO-Jj-3Wt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9QO-Jj-3Wt">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -58,18 +58,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fH5-5p-rJ0">
-                                <rect key="frame" x="0.0" y="103" width="393" height="84"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="82"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Lemon, Cheese, Sausages..." borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q67-pt-d2E">
-                                        <rect key="frame" x="16" y="24" width="288" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Lemon, Cheese, Sausages..." borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q67-pt-d2E">
+                                        <rect key="frame" x="16" y="24" width="290" height="34"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <textInputTraits key="textInputTraits" textContentType="name"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8c-Lg-AiT">
-                                        <rect key="frame" x="320" y="24" width="57" height="36"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8c-Lg-AiT">
+                                        <rect key="frame" x="322" y="24" width="55" height="34"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Add">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -89,7 +89,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eWr-xA-tjg">
-                                <rect key="frame" x="0.0" y="246" width="393" height="447"/>
+                                <rect key="frame" x="0.0" y="244" width="393" height="449"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientCell" textLabel="DyX-JP-jLy" style="IBUITableViewCellStyleDefault" id="fPn-3k-7g9">
@@ -118,14 +118,14 @@
                                 <rect key="frame" x="186" y="721" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvn-C3-TNZ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvn-C3-TNZ">
                                 <rect key="frame" x="16" y="709" width="361" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="2sN-Uj-GQr"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Search for recipes">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="22"/>
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -133,18 +133,19 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Az3-Nw-GSQ">
-                                <rect key="frame" x="0.0" y="195" width="393" height="43"/>
+                                <rect key="frame" x="0.0" y="193" width="393" height="43"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kk1-0T-BFG">
-                                        <rect key="frame" x="16" y="11" width="86" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kk1-0T-BFG">
+                                        <rect key="frame" x="16" y="11.333333333333341" width="85.333333333333329" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4N-uS-yiQ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4N-uS-yiQ">
                                         <rect key="frame" x="313" y="4" width="64" height="35"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Clear">
+                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -182,7 +183,7 @@
                             <constraint firstItem="zvn-C3-TNZ" firstAttribute="bottom" secondItem="SLF-Na-07i" secondAttribute="bottom" constant="-16" id="x0K-9p-Uhd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="What's in your fridge ?" largeTitleDisplayMode="always" id="rGT-bR-65m"/>
+                    <navigationItem key="navigationItem" title="What's in your fridge ?" id="rGT-bR-65m"/>
                     <connections>
                         <outlet property="activityIndicator" destination="Q7v-pg-pdf" id="nep-25-QjH"/>
                         <outlet property="searchButton" destination="zvn-C3-TNZ" id="8Nn-2J-Io5"/>
@@ -249,16 +250,16 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ki9-3v-jKz">
-                                        <rect key="frame" x="16" y="144.66666666666666" width="278.33333333333331" height="39.333333333333343"/>
+                                        <rect key="frame" x="16" y="149.66666666666666" width="278.33333333333331" height="34.333333333333343"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTg-TF-gK6">
-                                                <rect key="frame" x="4" y="3.9999999999999982" width="65" height="31.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTg-TF-gK6">
+                                                <rect key="frame" x="4" y="3.9999999999999982" width="52" height="26.333333333333329"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cTg-TF-gK6" secondAttribute="trailing" constant="4" id="1QX-Gt-2fU"/>
                                             <constraint firstAttribute="bottom" secondItem="cTg-TF-gK6" secondAttribute="bottom" constant="4" id="8xd-gR-EVx"/>
@@ -269,14 +270,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fE0-L7-mHu">
                                         <rect key="frame" x="313" y="16" width="48" height="29"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYb-42-ljx">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYb-42-ljx">
                                                 <rect key="frame" x="4" y="4" width="26" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PYb-42-ljx" secondAttribute="trailing" constant="18" id="0LP-cb-KBW"/>
                                             <constraint firstItem="PYb-42-ljx" firstAttribute="leading" secondItem="fE0-L7-mHu" secondAttribute="leading" constant="4" id="7m7-7E-ZvG"/>
@@ -305,14 +306,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCD-KE-Jmj">
                                 <rect key="frame" x="8" y="291" width="377" height="451"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="os2-ji-LgZ">
-                                        <rect key="frame" x="15.999999999999993" y="16" width="123.33333333333331" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="os2-ji-LgZ">
+                                        <rect key="frame" x="16" y="15.999999999999996" width="135" height="33.666666666666657"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gk7-R8-SnM">
-                                        <rect key="frame" x="16" y="61" width="345" height="390"/>
+                                        <rect key="frame" x="16" y="65.666666666666714" width="345" height="385.33333333333326"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -330,14 +331,14 @@
                                     <constraint firstAttribute="trailing" secondItem="Gk7-R8-SnM" secondAttribute="trailing" constant="16" id="zGi-hO-DVn"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6GX-VY-YrK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6GX-VY-YrK">
                                 <rect key="frame" x="16" y="758" width="361" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="ZPs-eq-J7C"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Get directions">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle2"/>
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -348,25 +349,25 @@
                         <viewLayoutGuide key="safeArea" id="b8y-Yu-dUf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="qCD-KE-Jmj" firstAttribute="top" secondItem="97G-Lf-3aG" secondAttribute="bottom" constant="16" id="MQJ-i3-k53"/>
+                            <constraint firstItem="97G-Lf-3aG" firstAttribute="top" secondItem="b8y-Yu-dUf" secondAttribute="top" constant="16" id="6L9-nV-Lp7"/>
+                            <constraint firstItem="qCD-KE-Jmj" firstAttribute="top" secondItem="97G-Lf-3aG" secondAttribute="bottom" constant="16" id="EwL-TX-sD3"/>
+                            <constraint firstItem="97G-Lf-3aG" firstAttribute="trailing" secondItem="qCD-KE-Jmj" secondAttribute="trailing" id="SMv-e5-d5e"/>
                             <constraint firstItem="b8y-Yu-dUf" firstAttribute="trailing" secondItem="6GX-VY-YrK" secondAttribute="trailing" constant="16" id="TE9-mX-bCX"/>
                             <constraint firstItem="6GX-VY-YrK" firstAttribute="leading" secondItem="b8y-Yu-dUf" secondAttribute="leading" constant="16" id="W2b-hC-Sve"/>
-                            <constraint firstItem="b8y-Yu-dUf" firstAttribute="trailing" secondItem="97G-Lf-3aG" secondAttribute="trailing" constant="8" id="dWG-5s-oFs"/>
-                            <constraint firstItem="97G-Lf-3aG" firstAttribute="leading" secondItem="b8y-Yu-dUf" secondAttribute="leading" constant="8" id="fBz-U1-R6N"/>
                             <constraint firstItem="qCD-KE-Jmj" firstAttribute="leading" secondItem="b8y-Yu-dUf" secondAttribute="leading" constant="8" id="fw5-1y-4dk"/>
                             <constraint firstItem="b8y-Yu-dUf" firstAttribute="bottom" secondItem="6GX-VY-YrK" secondAttribute="bottom" constant="16" id="hiB-kn-4QN"/>
                             <constraint firstItem="b8y-Yu-dUf" firstAttribute="trailing" secondItem="qCD-KE-Jmj" secondAttribute="trailing" constant="8" id="knL-nc-HXf"/>
                             <constraint firstItem="6GX-VY-YrK" firstAttribute="top" secondItem="qCD-KE-Jmj" secondAttribute="bottom" constant="16" id="lxa-fe-z5y"/>
-                            <constraint firstItem="97G-Lf-3aG" firstAttribute="top" secondItem="b8y-Yu-dUf" secondAttribute="top" constant="16" id="sY1-5B-RDy"/>
+                            <constraint firstItem="97G-Lf-3aG" firstAttribute="leading" secondItem="qCD-KE-Jmj" secondAttribute="leading" id="o9B-Gb-eAJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Recipe" largeTitleDisplayMode="always" id="XK1-R9-LtW"/>
                     <connections>
-                        <outlet property="cookingTimeLabel" destination="PYb-42-ljx" id="mtP-Rr-QlL"/>
-                        <outlet property="favoriteButton" destination="GeG-xI-fvD" id="R9o-Md-ROI"/>
-                        <outlet property="imageView" destination="qUD-VS-htg" id="fgK-Mm-nQU"/>
-                        <outlet property="ingredientsView" destination="Gk7-R8-SnM" id="qus-pV-ULt"/>
-                        <outlet property="titleLabel" destination="cTg-TF-gK6" id="eAo-WT-sgP"/>
+                        <outlet property="cookingTimeLabel" destination="PYb-42-ljx" id="JVh-IZ-V4f"/>
+                        <outlet property="favoriteButton" destination="GeG-xI-fvD" id="DeW-sT-epz"/>
+                        <outlet property="imageView" destination="qUD-VS-htg" id="EyO-Bk-9s0"/>
+                        <outlet property="ingredientsView" destination="Gk7-R8-SnM" id="Ge9-3Z-FTm"/>
+                        <outlet property="titleLabel" destination="cTg-TF-gK6" id="tJk-In-eLR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16Q-Cb-ul9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -443,7 +444,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
